@@ -126,6 +126,7 @@ const ProductList = (props) => {
     };
 
     const onSave = () => {
+        console.clear();
         console.log('Products');
         console.table(rootScope.products);
         console.log('###########################################');
