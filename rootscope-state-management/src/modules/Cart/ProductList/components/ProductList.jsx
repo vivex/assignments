@@ -132,13 +132,13 @@ const ProductList = (props) => {
     return (<>
         <Paper className={classes.paper}>
             <Grid container>
-                <Grid item xs={6} className={classes.formGrid}>
+                <Grid item xs={12} md={6} className={classes.formGrid}>
                     <Form title="Billing Address" gridSize={12} fields={ADDRESS_FIELDS} values={rootScope.billingAddress} onChange={onBillingAddressChange}/>
                 </Grid>
-                <Grid item xs={6} className={classes.formGrid}>
+                <Grid item xs={12} md={6} className={classes.formGrid}>
                     <Form title="Shipping Address" gridSize={12} fields={ADDRESS_FIELDS} values={rootScope.shippingAddress} onChange={onShippingAddressChange}/>
                 </Grid>
-                <Grid item xs={12} className={classes.formGrid}>
+                <Grid item md={12} className={classes.formGrid}>
                     <Form gridSize={6} fields={DATE_FORM}  onChange={onDateChange} values={rootScope.dates} />
                 </Grid>
             </Grid>
@@ -157,9 +157,9 @@ const ProductList = (props) => {
                 </Grid>
             </Grid>
             <Grid container>
-                <Grid item xs={11}>
+                <Grid item md={11}>
                 </Grid>
-                <Grid item xs={1} className={classes.buttonFooter}>
+                <Grid item md={1} xs={12} className={classes.buttonFooter}>
                     <Button variant="contained" onClick={onSave} color="primary">Save</Button>
                 </Grid>
             </Grid>

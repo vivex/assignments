@@ -4,15 +4,20 @@ import {Grid, TextField, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import connect from '../../../../utils/root-scope';
 import InputField from '../../../Shared/Form/InputField';
-
+import DeleteIcon from '@material-ui/icons/Delete';
 const useStyles = makeStyles(theme => ({
     button: {
-
+        padding: '1em',
+        [theme.breakpoints.down('sm')]: {
+            minWidth: '20px',
+            padding: '14px 6px',
+        },
     },
     textField: {
-       margin: theme.spacing(1),
+       padding: theme.spacing(1),
     },
     buttonWrapper: {
+        margin: 'auto auto',
     }
 }));
 
@@ -38,20 +43,20 @@ const ProductRow = (props) => {
 
     return (
         <Grid container>
-            <Grid item xs={1} className={classes.textField}>
+            <Grid item md={1} xs={2} className={classes.textField}>
                 <InputField label="ID" readOnly={true}
                             value={id} variant="outlined"
                             onChange={handleChange('id')}
                          />
             </Grid>
-            <Grid item  xs={3} className={classes.textField}>
+            <Grid item  md={3} xs={10} className={classes.textField}>
                 <InputField label="Product Name"
                             validationRules={['required']}
                             value={name} variant="outlined"
                             onChange={handleChange('name')}/>
 
             </Grid>
-            <Grid item xs={1} className={classes.textField}>
+            <Grid item md={1} xs={4} className={classes.textField}>
                 <InputField label="Qty"
                             type="number"
                             validationRules={['no_negative', 'required']}
@@ -61,7 +66,7 @@ const ProductRow = (props) => {
                             />
 
             </Grid>
-            <Grid item  xs={1} className={classes.textField}>
+            <Grid item  md={1} xs={4} className={classes.textField}>
                 <InputField label="Unit Price"
                             validationRules={['no_negative', 'required']}
                             type="number"
@@ -69,7 +74,7 @@ const ProductRow = (props) => {
                             onChange={handleChange('unitPrice')}
                             />
             </Grid>
-            <Grid item  xs={1} className={classes.textField}>
+            <Grid item  md={1} xs= {4} className={classes.textField}>
                 <InputField label="Total Price"
                             type="number"
                             readOnly={true}
@@ -77,7 +82,7 @@ const ProductRow = (props) => {
                             onChange={handleChange('totalPrice')}
                             />
             </Grid>
-            <Grid item  xs={3} className={classes.textField}>
+            <Grid item  md={3}  xs= {10} className={classes.textField}>
                 <InputField label="Notes"
                             type="text"
                             value={notes} variant="outlined"
@@ -85,8 +90,8 @@ const ProductRow = (props) => {
                             />
 
             </Grid>
-            <Grid  item xs={1} className={classes.buttonWrapper}  className={classes.textField}>
-                <Button variant="outlined" color="secondary" className={classes.button} onClick={onDeleteWrapper}>DELETE</Button>
+            <Grid  item md={1} xs={2} className={classes.buttonWrapper} >
+                <Button variant="outlined" color="secondary" className={classes.button} onClick={onDeleteWrapper}><DeleteIcon/></Button>
             </Grid>
     </Grid>);
 };
