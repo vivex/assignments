@@ -126,7 +126,19 @@ const ProductList = (props) => {
     };
 
     const onSave = () => {
-        console.log('rootScope', rootScope);
+        console.log('Products');
+        console.table(rootScope.products);
+        console.log('###########################################');
+        console.log('Billing Address');
+        console.table(rootScope.billingAddress);
+        console.log('###########################################');
+        console.log('Shipping Address');
+        console.table(rootScope.shippingAddress);
+        console.log('###########################################');
+        console.log('Dates');
+        console.table(rootScope.dates);
+
+
     };
 
     return (<>
