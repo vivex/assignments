@@ -6,6 +6,15 @@ import connect from '../../../../utils/root-scope';
 import InputField from '../../../Shared/Form/InputField';
 import DeleteIcon from '@material-ui/icons/Delete';
 const useStyles = makeStyles(theme => ({
+    root: {
+        [theme.breakpoints.down('sm')]: {
+            borderBottom: `1px dashed ${theme.palette.primary.main}`,
+            padding: '14px 6px',
+        },
+        '&:last-child': {
+            borderBottom: 0
+        }
+    },
     button: {
         padding: '1em',
         [theme.breakpoints.down('sm')]: {
@@ -42,7 +51,7 @@ const ProductRow = (props) => {
     };
 
     return (
-        <Grid container>
+        <Grid container className={classes.root}>
             <Grid item md={1} xs={2} className={classes.textField}>
                 <InputField label="ID" readOnly={true}
                             value={id} variant="outlined"
